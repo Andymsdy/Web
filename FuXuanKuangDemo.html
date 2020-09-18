@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车复选框</title>
+</head>
+<body>
+<input type="checkbox" class="all"/>全选
+<input type="checkbox" class="single"/>选项1
+<input type="checkbox" class="single"/>选项2
+<input type="checkbox" class="single"/>选项3
+<input type="checkbox" class="reverse"/>反选
+</body>
+
+<script src="jquery-1.11.0.min.js"></script>
+
+<script>
+    $(".all").click(function () {
+
+        var ck = $(this).prop("checked");
+
+        $(".all").prop("checked",ck);
+        $(".single").prop("checked",ck);
+
+    });
+
+    function checkAll() {
+        var all = true;
+        $(".single").each(function () {
+            var ck = $(this).prop("checked");
+            if (!ck) {
+                all = false;
+            }
+        });
+
+        $(".all").prop("checked", all);
+    }
+
+    $(".single").click(function () {
+        checkAll();
+    });
+
+    $(".reverse").click(function () {
+        $(".single").each(function () {
+            var ck = $(this).prop("checked");
+            ck = !ck;
+            $(this).prop("checked",ck);
+        });
+
+        checkAll();
+
+    });
+</script>
+
+</html>
