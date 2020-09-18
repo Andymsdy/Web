@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级菜单</title>
+
+    <style>
+        .u2{
+            display: none;
+            position: fixed;
+        }
+
+        .u2>li{
+            list-style: none;
+        }
+
+        .u1>li{
+            list-style: none;
+            float: left;
+            margin-left: 40px;
+        }
+
+        .u1>li:hover>.u2{
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+<ul class="u1">
+    <li>奶茶
+        <ul class="u2">
+            <li>草莓椰果奶茶</li>
+            <li>奶茶三兄弟</li>
+            <li>草莓珍珠奶茶</li>
+        </ul>
+    </li>
+    <li>果茶
+        <ul class="u2">
+            <li>草莓多多</li>
+            <li>柠檬多多</li>
+            <li>芒果多多</li>
+        </ul>
+    </li>
+    <li>咖啡
+        <ul class="u2">
+            <li>拿铁咖啡</li>
+            <li>美式咖啡</li>
+            <li>卡布奇诺</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
